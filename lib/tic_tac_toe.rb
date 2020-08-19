@@ -42,14 +42,14 @@ end
 
 
 def turn(board)
-  current_player = current_player()
+  the_current_player = current_player()
   #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
 
   if valid_move?(index)
-    move(index, current_player)
+    move(index, the_current_player)
     display_board()
 
 
@@ -68,7 +68,7 @@ def turn(board)
     end #end of loop
 
     #if loop is finished, take new move and send it in
-    move( getthenewmove, current_player)
+    move( getthenewmove, the_current_player)
     display_board()
   end #end of if & else
 
