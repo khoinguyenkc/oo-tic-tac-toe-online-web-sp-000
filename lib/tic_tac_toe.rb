@@ -1,3 +1,4 @@
+require 'pry'
 class TicTacToe
  WIN_COMBINATIONS = [
    [0,1,2],
@@ -43,6 +44,7 @@ end
 
 def turn
   the_current_player = current_player()
+  binding.pry
   #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
   puts "Please enter 1-9:"
   input = gets.strip
