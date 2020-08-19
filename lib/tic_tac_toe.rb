@@ -146,4 +146,35 @@ end
 end
 
 
+def play(board)
+  #A tic tac toe game must allow players to take turns, checking if the game is over after every turn, and at the conclusion of the game, whether because it was won or because it was a draw, reporting to the user the outcome of the game
+  until over? do
+    turn
+
+  end
+
+  if over?
+    if won?
+
+      puts "Congratulations #{winner(board)}!"
+    else #aka a draw
+      puts "Cat's Game!"
+    end
+  end
+  #boardnotfull = (board.include?(" ") || board.include?(""))
+  #variable must be inside so that e4very loop re calculate the value of boardisfull
+  # otherwie it's static
+  #crucial
+  #if !boardnotfull
+  #  break
+  #end
+
+end
+
+
+
+
+
+
+
 end
