@@ -42,7 +42,7 @@ end
 
 
 def turn(board)
-  current_player = current_player(board)
+  current_player = current_player()
   #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
   puts "Please enter 1-9:"
   input = gets.strip
@@ -85,17 +85,17 @@ end
   end
 
 
-    def turn_count
-      turns = 0
+  def turn_count
+    turns = 0
 
-      @board.each do | item |
-        if item == "X" || item == "O"
-          turns +=1
-        end
+    @board.each do | item |
+      if item == "X" || item == "O"
+        turns +=1
       end
-
-      return turns
     end
+
+    return turns
+  end
 
 
 
