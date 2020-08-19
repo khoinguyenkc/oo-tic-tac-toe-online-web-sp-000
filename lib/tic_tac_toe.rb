@@ -41,7 +41,7 @@ def valid_move?(index)
 end
 
 
-def turn(board)
+def turn
   the_current_player = current_player()
   #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
   puts "Please enter 1-9:"
