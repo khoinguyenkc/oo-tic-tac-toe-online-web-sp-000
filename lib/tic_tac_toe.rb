@@ -156,7 +156,7 @@ def play
   if over?
     if won?
 
-      puts "Congratulations #{winner(board)}!"
+      puts "Congratulations #{winner}!"
     else #aka a draw
       puts "Cat's Game!"
     end
