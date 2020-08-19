@@ -99,5 +99,18 @@ end
   end
 
 
+  def won?
+  WIN_COMBINATIONS.each do |combo|
+    # if same value in this row/column/diag and not empty empty empty
+    if ( (@board[combo[0]] == @board[combo[1]]) &&  (@board[combo[1]] == @board[combo[2]] ) && position_taken?(combo[0]) )
+      return combo
+    #critical:
+    #do not put an else return nil here. or it will end the entire operation. only return nill if it's looped through EVERYTHING and still found nothing
+    end
+  end
+
+  return nil
+end
+
 
 end
