@@ -43,9 +43,8 @@ end
 
 
 def turn
+  #is changing thecurrentplayer what makes the diff.. i guess
   the_current_player = current_player()
-  binding.pry
-  #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
