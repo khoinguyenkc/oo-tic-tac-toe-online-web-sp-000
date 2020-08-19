@@ -41,6 +41,60 @@ def valid_move?(index)
 end
 
 
+def turn(board)
+  current_player = current_player(board)
+  #careful. we do not have currentplayer yet, and we want it to reference the method, not itself. no board ...
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+
+  if valid_move?(index)
+    move(index, current_player)
+    display_board()
+
+
+  else
+    #put it in a loop
+    inputnowvalid = false
+
+    until inputnowvalid == true
+      puts "Please enter 1-9:"
+      input = gets.strip
+      getthenewmove = input_to_index(input)
+
+      inputnowvalid = valid_move?(getthenewmove)
+      #if vaid, input nowvalid becomes true. that will stop the loop.
+      #othrewise, this keeps going forever
+    end #end of loop
+
+    #if loop is finished, take new move and send it in
+    move( getthenewmove, current_player)
+    display_board()
+  end #end of if & else
+
+end
+
+  def current_player
+    turns = turn_count()
+
+    if (turns % 2 == 0)
+      return "X"
+    else
+      return "O"
+    end
+
+
+    def turn_count
+      turns = 0
+
+      @board.each do | item |
+        if item == "X" || item == "O"
+          turns +=1
+        end
+      end
+
+      return turns
+    end
 
 
 
