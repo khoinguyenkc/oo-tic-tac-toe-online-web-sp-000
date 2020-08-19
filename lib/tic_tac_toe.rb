@@ -82,6 +82,7 @@ end
     else
       return "O"
     end
+  end
 
 
     def turn_count
