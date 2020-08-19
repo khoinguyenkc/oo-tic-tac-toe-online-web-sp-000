@@ -112,5 +112,20 @@ end
   return nil
 end
 
+def full?
+  @board.none? do |item|
+    item == " " || item   == ""
+  end
+end
+
+def draw?
+  if full? && won? == nil
+    return true
+  else
+    return false
+  end
+end
+
+
 
 end
